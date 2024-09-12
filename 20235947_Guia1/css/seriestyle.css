@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+header img {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    margin: 20px auto;
+}
+
+article {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+}
+article h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: skyblue;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+article p {
+    font-size: 1.2em;
+    color: white; 
+    text-align: justify;
+    margin: 20px auto;
+    width: 80%;
+}
+.seccion-personajes {
+    margin: 30px auto;
+    width: 80%;
+}
+
+.info-adicional {
+    text-align: center;
+}
+
+.subtitle, .subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    color: skyblue; 
+    font-size: 2em;
+    margin-top: 10px;
+}
+.info-adicional article {
+    margin-bottom: 30px;
+}
+
+.info-adicional h3 {
+    color: yellow; 
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.personaje-imagen, .personaje-image {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.info-adicional p {
+    font-size: 1em;
+    color: white; 
+    width: 80%;
+    margin: 0 auto 10px auto;
+    text-align: justify;
+}
+.info-adicional a {
+    color: skyblue; 
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.info-adicional a:hover {
+    color: blue; 
+    text-decoration: underline;
+}
+
+.tabla-temporadas {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.tabla-temporadas th, .tabla-temporadas td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.tabla-temporadas th {
+    background-color: skyblue; 
+    color: white; 
+    font-weight: bold;
+}
+
+.tabla-temporadas td {
+    color: white; 
+}
+

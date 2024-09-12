@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue;
+}
+
+div {
+    font-size: 20px;
+}
+
+h2 {
+    text-decoration: underline; 
+    color: white;
+}
+
+.Parrafo1 {
+    color: navy;
+}
+
+.Parrafo2 {
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.Parrafo3 {
+    font-size: 12px;
+}

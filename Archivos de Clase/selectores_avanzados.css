@@ -1,0 +1,36 @@
+*{
+    color: green;
+}
+
+html{
+    background-color: gainsboro;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkgreen;
+}
+
+section{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+section h2{ /*Toma todos los h2 dentro de una section*/
+    color: navy;
+}
+
+section>h2{ /*Toma todos los h2 que son hijos directos de section*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+}
+
+article h1+h2{ /*Toma todos los h2 adyacentes a h1 que esten dentro de un article*/
+    text-decoration: underline;
+}
+
+p{
+    font-size: 14px;
+}
+
+p:first-letter {
+    font-size: 2em;
+}
