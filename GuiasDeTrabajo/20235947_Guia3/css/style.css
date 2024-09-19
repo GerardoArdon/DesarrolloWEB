@@ -81,3 +81,16 @@ section article:nth-child(2){
     top: 50px;
     display: none;
 }
+
+/* 31: Las otras cajas se mantuvieron en su lugar y no tomaron el
+espacio vacio que dejo libre el segundo articulo debido a que la
+posicion es relativa. */
+
+/* 36. La diferencia es que el relativo se mueve de de acuerdo a la 
+posición inicial, mientras que el absoluto se mueve de acuerdo al mas
+cercano que tenga de posición diferente a estatico. */
+
+/* 40.La diferencia entre ambas opciones para ocultar elementos, es que
+el visibility:hidden solo hace a los elementos invisibles a la vista,
+es decir que sigue ahi pero simplemente no se ve. Mientras que el display:none
+lo desaparece totalmente, como si ya no hubiera nada en ese espacio. */
