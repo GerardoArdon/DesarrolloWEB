@@ -16,7 +16,7 @@ header{
     overflow: hidden;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 1; /*Unicamente el z-index y el position:fixed le he agregado al original.*/
 }
 
 footer{
@@ -88,6 +88,8 @@ section article:nth-child(2){
     top: 50px;
     display: none;
 }
+
+
 
 /* 31: Las otras cajas se mantuvieron en su lugar y no tomaron el
 espacio vacio que dejo libre el segundo articulo debido a que la
