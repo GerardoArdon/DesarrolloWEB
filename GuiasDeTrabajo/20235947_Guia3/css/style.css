@@ -14,19 +14,19 @@ header{
     background: #16A085;
     height: 130px;
     overflow: hidden;
-    position: fixed;
+    position: fixed;/*Mod1*/
     width: 100%;
-    z-index: 1; /*Unicamente el z-index y el position:fixed le he agregado al original.*/
+    z-index: 1;/*Mod2*/
 }
 
 footer{
     margin-top: 20px;
     background: #16A085;
     height: 50px;
-    position: fixed;
+    position: fixed; /*Mod1*/
     width: 100%;
     bottom: 0;
-    z-index: 1;
+    z-index: 1;/*Mod2*/
 }
 
 footer div{
@@ -61,6 +61,8 @@ section{
     justify-content: space-between;
     overflow: hidden;
     position: relative;
+    padding-top: 150px; /*Mod3*/
+    padding-bottom: 70px;/*Mod3*/
 }
 
 section article{
