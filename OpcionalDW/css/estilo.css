@@ -11,42 +11,74 @@
 /*HEADER del sitio web*/
 header{
     background-color: #323A45;
-}
-.logo img{
-    margin-top: 30px;
-    margin-left: 60px;
-}
-nav ul{
+    width: 100%;
+    height: 80px;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 1; 
+}
+header .envoltorio{
+    width: 90%;
+    display: flex;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
+    align-items: center;
 }
-nav ul li{
-    display: inline-block;
-    padding: 0px;
+header .logo img{
+    height: 50px;
 }
-nav ul li a{
+header nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+header nav ul li{
+    position: relative;
+}
+header nav ul li a{
+    font-size: 16px;
+    padding: 30px 15px;
     color: white;
     text-decoration: none;
 }
+header nav ul li ul{
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #323A45;
+    list-style: none;
+}
+header nav ul li:hover ul{
+    display: block;
+}
+header nav ul li ul li a{
+    padding: 15px 20px;
+    white-space: nowrap;
+}
+header nav ul li a:hover{
+    background-color: #12488C;
+}
+
 
 
 /*Imagen del hombre leyendo*/
-.contenedor-slider {
+.contenedor-slider{
     width: 100%;
     overflow: hidden;
+    border-top: 3px solid #12488C;
 }
-.contenedor-slider img {
+.contenedor-slider img{
     width: 100%;
     height: auto;
     display: block;
 }
 
 
-/*Cuadro azul de Bolsa de Trabajo ESEN.*/
+/*Cuadro azul de Bolsa de trabajo esen*/
 .intro{
     background-color: #12488C;
 	color: white;
@@ -70,6 +102,8 @@ nav ul li a{
     text-align: justify;
 }
 
+
+
 /*Botonsito de VER OFERTAS*/
 .boton{
     background-color: #00315E;
@@ -85,13 +119,14 @@ nav ul li a{
 
 
 /*Los 3 cuadritos con imagenes*/
-.servicios .envoltorio {
+.servicios .envoltorio{
     display: flex;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
+    border: lightgray;
 }
-.grid {
+.grid{
     background-color: white;
     width: 350px;
     height: 350px;
@@ -104,20 +139,20 @@ nav ul li a{
     flex-direction: column;
     justify-content: space-between;
 }
-.grid img {
+.grid img{
     width: 100%;
     height: auto;
     max-height: 200px;
     margin-bottom: 10px;
 }
-.grid h3 {
+.grid h3{
     color: #12488C;
     border-bottom: 1px solid lightgray;
     padding-bottom: 22px;
     margin: 10px 0;
     font-size: 20px;
 }
-.grid p {
+.grid p{
     color: #A5A3A3;
     margin: 10px 0;
 }
@@ -129,13 +164,13 @@ nav ul li a{
     display: inline-block;
     margin: 0px 100px 0px 100px;
 }
-.botoncito:hover {
+.botoncito:hover{
     background-color: #187BCD;
 }
 
 
 
-/*Cuadro gris de TESTIMONIOS*/
+/*Cuadro gris de TESTIMONOS*/
 .testimonios{
 	background-color: #EDEAE6;
 	width: 100%;
@@ -148,47 +183,48 @@ nav ul li a{
 	bottom: 40px;
 }
 .testimonios-grid h3{
+    font-size: 25px;
 	color: #454545;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 40px;
-	font-size: 25px;
+
 }
 .testimonios-grid p{
 	color: #999999;
 	margin-right: 100px;
 	margin-left: 100px;
 }
-.testimonios-grid p b {
-    font-weight: bold;
-    display: block;
+.testimonios-grid p b{
     margin-top: 20px;
     padding-top: 10px;
+    font-weight: bold;
+    display: block;
 }
 
 
 
-/*TABLA con estilo cebra*/
-table {
+/*TABLA con estilo zebra*/
+table{
     width: 100%;
 }
-th, td {
+th, td{
     padding: 8px;
     text-align: left; 
     border-bottom: 1px solid black;
 	border-right: 1px solid black;
 }
-tbody tr:nth-child(2n) {
-    background-color: white;
-}
-tbody tr:nth-child(2n+1) {
-    background-color: #BFBFBF;
-}
-th {
+th{
     background-color: black;
     color: white;
 }
-.boton {
+tbody tr:nth-child(2n){
+    background-color: white;
+}
+tbody tr:nth-child(2n+1){
+    background-color: #BFBFBF;
+}
+.boton{
     background-color: #00315E;
     color: white;
     padding: 8px 16px;
@@ -196,13 +232,13 @@ th {
     text-align: center;
     display: inline-block;
 }
-.boton:hover {
+.boton:hover{
     background-color: #187BCD;
 }
 
 
 /*VIDEO*/
-.ofertas .envoltorio {
+.ofertas .envoltorio{
     display: flex;
     justify-content: center;
     margin-top: 1%;
@@ -211,7 +247,7 @@ th {
 
 
 /*FORMULARIO de datos*/
-.envoltorio form {
+.envoltorio form{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -226,28 +262,28 @@ th {
     color: #12488C;
     font-weight: bold;
 }
-label {
+label{
     margin-bottom: 5px;
 }
-input, select, button {
+input, select, button{
     width: 100%;
     padding: 10px;
     border: 1px solid lightgray;
     border-radius: 5px;
 }
-button {
+button{
     background-color: #12488C;
     color: white;
     cursor: pointer;
 }
-button:hover {
+button:hover{
     background-color: #187BCD;
 }
 
 
 
 /*FOOTER del Sitio web*/
-footer {
+footer{
     background-color: #323A45;
     color: white;
 	font-size: 10px;
