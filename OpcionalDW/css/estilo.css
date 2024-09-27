@@ -255,6 +255,7 @@ tbody tr:nth-child(2n+1){
     gap: 10px;
     max-width: 600px;
     margin: 0 auto;
+    padding-bottom: 4%;
 }
 .ofertas .envoltorio h2{
     font-size: 30px;
