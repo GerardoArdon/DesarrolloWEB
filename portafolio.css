@@ -12,45 +12,104 @@ header {
     padding: 20px 0;
 }
 
-/*Texto del header?????*/
-.contenido {
+.frase h1{
+    font-size: 45px;
+}
+
+
+.contenido{
     width: 80%;
     margin: 0 auto;
 }
 
-/*DATOS PERSONALES*/
-.datos-personales {
+/* CUADROO DATOS PERSONALES*/
+.datos-personales{
     display: flex;
     background-color: #1167B1;
     color: white;
     padding: 20px;
     text-align: justify;
+    justify-content: center;
+    align-items: center;
 }
 
 /*MI FOTO*/
 .foto-perfil {
-    width: 150px;
+    width: 250px;
     height: auto;
-    margin-right: 20px;
+    margin: 0 auto;
+    display: block;
+}
+.contenido img{
+    display: flex;
+    align-items: center;
+}
+.contenido p{
+    display: flex;
+    justify-content: center;
 }
 
-/*DATOS MATERIA*/
-.datos-materia{
+/* DATOS DE LA MATERIA */
+.datos-materia {
+    text-align: justify;
     background-color: white;
     color: black;
     padding: 50px;
 }
+
+.datos-materia h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.datos-materia p{
+    line-height: 1.6;
+}
+
 
 /*GUIAS*/
 .guias{
     background-color: #1167B1;
     color: white;
     padding: 50px;
+    line-height: 1.6;
 }
+.ejercicios {
+    display: flex; 
+    justify-content: center;
+    gap: 20px;
+}
+.guias h2{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+.guia h3{
+    font-weight: bold;
+}
+.boton{
+    padding: 10px;
+    background-color: #03254C;
+    text-decoration: none;
+    color: white;
+}
+.boton:hover{
+    background-color: #2A9DF4;
+}
+
 
 /*FODA*/
 .foda{
     padding: 50px;
+}
+.foda h2{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+.foda p{
+    line-height: 1.6;
 }
 
 /*RETROALIMENTACION*/
@@ -59,10 +118,23 @@ header {
     color: white;
     padding: 50px;
 }
+.retroalimentacion h2{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+.retroalimentacion p{
+    line-height: 1.6;
+}
 
 /*APRENDIZAJE*/
 .aprendizaje{
-    padding: 50px;
+    padding: 55px;
+}
+.aprendizaje h2{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
 }
 
 /*FOOTER*/
@@ -73,3 +145,46 @@ footer {
     padding: 10px 0;
 }
 
+
+
+@media (max-width: 768px){
+    .contenido{
+        width: 90%;
+    }
+    .datos-personales{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .foto-perfil{
+        width: 200px;
+    }
+    .datos-materia, .guias{
+        padding: 30px;
+    }
+    .frase h1{
+        font-size: 30px;
+    }
+    .datos-materia h2{
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 480px){
+    .frase h1{
+        font-size: 24px;
+    }
+    .datos-materia h2{
+        font-size: 24px;
+    }
+    .foda-item{
+        padding: 10px;
+    }
+    .guia{
+        margin-bottom: 20px;
+    }
+    .ejercicios a{
+        display: block;
+        margin: 6px 0;
+    }
+}
