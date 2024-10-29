@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Estudiante</title>
+</head>
+<body>
+    <h2>Formulario de Ficha de Estudiante</h2>
+    <form id="formularioEstudiante">
+        <label for="carnet">Carnet (Formato: AA000):</label>
+        <input type="text" id="carnet" name="carnet"><br><br>
+
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="dui">Número de DUI (Formato: ########-#):</label>
+        <input type="text" id="dui" name="dui"><br><br>
+
+        <label for="nit">Número de NIT (Formato: ####-######-###-#):</label>
+        <input type="text" id="nit" name="nit"><br><br>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento (DD/MM/YYYY):</label>
+        <input type="text" id="fechaNacimiento" name="fechaNacimiento"><br><br>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="text" id="correo" name="correo"><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad"><br><br>
+
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script src="../js/validacion.js"></script>
+</body>
+</html>
+

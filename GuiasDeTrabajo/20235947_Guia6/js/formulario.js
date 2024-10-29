@@ -189,3 +189,97 @@ idModal.addEventListener("shown.bs.modal", () => {
 
 // Ejecutar función al momento de cargar la página HTML
 limpiarForm();
+
+
+
+
+
+
+
+
+
+
+
+//Ejercicio 1 complementario
+
+//función para actualizar la tabla
+function actualizarTabla() {
+    let $tablaPacientes = "<table class='table'><thead><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Sexo</th><th>País</th><th>Dirección</th><th>Acciones</th></tr></thead><tbody>";
+    arrayPaciente.forEach((element, index) => {
+        $tablaPacientes += `<tr>
+                            <td>${index + 1}</td>
+                            <td>${element[0]}</td>
+                            <td>${element[1]}</td>
+                            <td>${element[2]}</td>
+                            <td>${element[3]}</td>
+                            <td>${element[4]}</td>
+                            <td>${element[5]}</td>
+                            <td>
+                <button onclick="editarPaciente(${index})" class="btn btn-primary">
+                    <i class="bi bi-pencil-square"></i> Editar
+                </button>
+                <button onclick="eliminarPaciente(${index})" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Eliminar
+                </button>
+            </td>
+        </tr>`;
+    });
+
+    $tablaPacientes += "</tbody></table>";
+    document.getElementById("idTablaPacientes").innerHTML = $tablaPacientes;
+}
+
+
+
+//funcion para eliminar un paciente
+function eliminarPaciente(index) {
+    arrayPaciente.splice(index, 1);
+    mensaje.innerHTML = "Paciente eliminado con éxito";
+    toast.show();
+    actualizarTabla();
+}
+
+
+
+//funcion para editar un pacente
+function editarPaciente(index) {
+    const paciente = arrayPaciente[index];
+    //los valores actuales se colocan en el formulario para editarlos:
+    inputNombre.value = paciente[0];
+    inputApellido.value = paciente[1];
+    inputFechaNacimiento.value = paciente[2];
+    inputRdMasculino.checked = paciente[3] === "Hombre";
+    inputRdFemenino.checked = paciente[3] === "Mujer";
+    cmbPais.value = Array.from(cmbPais.options).find(option => option.text === paciente[4]).value;
+    inputDireccion.value = paciente[5];
+
+    //cambiar el botón de "guardar" a "actualizar"
+    buttonAgregarPaciente.textContent = "Actualizar";
+    buttonAgregarPaciente.onclick = function() {
+        //Actualizar paciente con los nuevos valores del formulario
+        arrayPaciente[index] = [
+            inputNombre.value,
+            inputApellido.value,
+            inputFechaNacimiento.value,
+            inputRdMasculino.checked ? "Hombre" : "Mujer",
+            cmbPais.options[cmbPais.selectedIndex].text,
+            inputDireccion.value
+        ];
+
+        mensaje.innerHTML = "Paciente actualizado con éxito";
+        toast.show();
+        limpiarForm();
+        actualizarTabla();
+        buttonAgregarPaciente.textContent = "Guardar Datos"; 
+        buttonAgregarPaciente.onclick = addPaciente;
+    };
+}
+
+//mostrar pacientes en la tabla cuando se presiona el boton mostrar
+buttonMostrarPaciente.onclick = actualizarTabla;
+
+//"agregar Paciente" asignado al botón de guardar
+buttonAgregarPaciente.onclick = addPaciente;
+
+//Manda a lamar a la función limpiarForm para limpiar el formulario al inicio
+limpiarForm();
