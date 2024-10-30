@@ -192,20 +192,12 @@ limpiarForm();
 
 
 
-
-
-
-
-
-
-
-
 //Ejercicio 1 complementario
 
 //función para actualizar la tabla
-function actualizarTabla() {
-    let $tablaPacientes = "<table class='table'><thead><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Sexo</th><th>País</th><th>Dirección</th><th>Acciones</th></tr></thead><tbody>";
-    arrayPaciente.forEach((element, index) => {
+function actualizarTabla(){
+    let $tablaPacientes= "<table class='table'><thead><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Sexo</th><th>País</th><th>Dirección</th><th>Acciones</th></tr></thead><tbody>";
+    arrayPaciente.forEach((element, index) =>{
         $tablaPacientes += `<tr>
                                 <td>${index+1}</td>
                                 <td>${element[0]}</td>
@@ -226,16 +218,16 @@ function actualizarTabla() {
                             </tr>`;
     });
 
-    $tablaPacientes += "</tbody></table>";
-    document.getElementById("idTablaPacientes").innerHTML = $tablaPacientes;
+    $tablaPacientes+= "</tbody></table>";
+    document.getElementById("idTablaPacientes").innerHTML =$tablaPacientes;
 }
 
 
 
 //funcion para eliminar un paciente
-function eliminarPaciente(index) {
+function eliminarPaciente(index){
     arrayPaciente.splice(index, 1);
-    mensaje.innerHTML = "Paciente eliminado con éxito";
+    mensaje.innerHTML = "Paciente eliminado con exito";
     toast.show();
     actualizarTabla();
 }
@@ -243,7 +235,7 @@ function eliminarPaciente(index) {
 
 
 //funcion para editar un pacente
-function editarPaciente(index) {
+function editarPaciente(index){
     const paciente = arrayPaciente[index];
 
     //los valores actuales se colocan en el formulario para editarlos:
@@ -279,12 +271,9 @@ function editarPaciente(index) {
 }
 
 
-
-//mostrar pacientes en la tabla cuando se presiona el boton mostrar
-buttonMostrarPaciente.onclick = actualizarTabla;
-
-//"agregar Paciente" asignado al botón de guardar
+//mostrar pacientes en la tabla cuando se presiona mostrar
+buttonMostrarPaciente.onclick =actualizarTabla;
+//"agregar paciente" asignado al botón de guardar
 buttonAgregarPaciente.onclick = addPaciente;
-
-//Manda a lamar a la función limpiarForm para limpiar el formulario al inicio
+//Manda a lamar a la función limpiarForm para limpiar el formulario
 limpiarForm();
