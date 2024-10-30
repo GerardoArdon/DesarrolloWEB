@@ -191,10 +191,7 @@ idModal.addEventListener("shown.bs.modal", () => {
 limpiarForm();
 
 
-
-//Ejercicio 1 complementario
-
-//función para actualizar la tabla
+//función para actualizar
 function actualizarTabla(){
     let $tablaPacientes= "<table class='table'><thead><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Sexo</th><th>País</th><th>Dirección</th><th>Acciones</th></tr></thead><tbody>";
     arrayPaciente.forEach((element, index) =>{
@@ -223,7 +220,6 @@ function actualizarTabla(){
 }
 
 
-
 //funcion para eliminar un paciente
 function eliminarPaciente(index){
     arrayPaciente.splice(index, 1);
@@ -231,7 +227,6 @@ function eliminarPaciente(index){
     toast.show();
     actualizarTabla();
 }
-
 
 
 //funcion para editar un pacente
@@ -251,7 +246,7 @@ function editarPaciente(index){
     buttonAgregarPaciente.textContent = "Actualizar";
     buttonAgregarPaciente.onclick = function() {
 
-        //actualiza paciente con los nuevos valores del formulario
+        //actualiza paciente con los nuevos valores
         arrayPaciente[index] = [
             inputNombre.value,
             inputApellido.value,

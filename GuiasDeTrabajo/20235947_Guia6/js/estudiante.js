@@ -36,7 +36,7 @@ function validarFormulario() {
 
     //Correo
     if (!/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(correo)){
-        mensaje += "El correo electrónico no es válido.<br>";
+        mensaje += "El correo electrónico no es valido.<br>";
     }
 
     //edad (solo numeros)
