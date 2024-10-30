@@ -207,22 +207,23 @@ function actualizarTabla() {
     let $tablaPacientes = "<table class='table'><thead><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Sexo</th><th>País</th><th>Dirección</th><th>Acciones</th></tr></thead><tbody>";
     arrayPaciente.forEach((element, index) => {
         $tablaPacientes += `<tr>
-                            <td>${index + 1}</td>
-                            <td>${element[0]}</td>
-                            <td>${element[1]}</td>
-                            <td>${element[2]}</td>
-                            <td>${element[3]}</td>
-                            <td>${element[4]}</td>
-                            <td>${element[5]}</td>
-                            <td>
-                <button onclick="editarPaciente(${index})" class="btn btn-primary">
-                    <i class="bi bi-pencil-square"></i> Editar
-                </button>
-                <button onclick="eliminarPaciente(${index})" class="btn btn-danger">
-                    <i class="bi bi-trash"></i> Eliminar
-                </button>
-            </td>
-        </tr>`;
+                                <td>${index+1}</td>
+                                <td>${element[0]}</td>
+                                <td>${element[1]}</td>
+                                <td>${element[2]}</td>
+                                <td>${element[3]}</td>
+                                <td>${element[4]}</td>
+                                <td>${element[5]}</td>
+                                <td>
+                                    <button onclick="editarPaciente(${index})" class="btn btn-primary">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+
+                                    <button onclick="eliminarPaciente(${index})" class="btn btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>`;
     });
 
     $tablaPacientes += "</tbody></table>";
@@ -244,6 +245,7 @@ function eliminarPaciente(index) {
 //funcion para editar un pacente
 function editarPaciente(index) {
     const paciente = arrayPaciente[index];
+
     //los valores actuales se colocan en el formulario para editarlos:
     inputNombre.value = paciente[0];
     inputApellido.value = paciente[1];
@@ -256,7 +258,8 @@ function editarPaciente(index) {
     //cambiar el botón de "guardar" a "actualizar"
     buttonAgregarPaciente.textContent = "Actualizar";
     buttonAgregarPaciente.onclick = function() {
-        //Actualizar paciente con los nuevos valores del formulario
+
+        //actualiza paciente con los nuevos valores del formulario
         arrayPaciente[index] = [
             inputNombre.value,
             inputApellido.value,
@@ -274,6 +277,8 @@ function editarPaciente(index) {
         buttonAgregarPaciente.onclick = addPaciente;
     };
 }
+
+
 
 //mostrar pacientes en la tabla cuando se presiona el boton mostrar
 buttonMostrarPaciente.onclick = actualizarTabla;
