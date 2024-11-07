@@ -190,6 +190,126 @@
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../js/ejemplo2.js" defer></script>
 
+
+
+
+
+    
+    <script>
+        // Obtener referencias de elementos
+        const form = document.forms['frmRegistro'];
+        const modalBody = document.getElementById('idBodyModal');
+    
+        // Expresión regular para validar correo electrónico
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+        // Validar el formulario al hacer clic en el botón de registro
+        document.querySelector("[name='btnRegistro']").addEventListener('click', function () {
+            // Obtener valores del formulario
+            const nombre = form['idNombre'].value.trim();
+            const apellidos = form['idApellidos'].value.trim();
+            const fechaNac = form['idFechaNac'].value;
+            const correo = form['idCorreo'].value.trim();
+            const password = form['idPassword'].value;
+            const passwordRepetir = form['idPasswordRepetir'].value;
+            const carrera = form.querySelector("[name='idRdCarrera']:checked");
+            const pais = form['idCmPais'].value;
+    
+            // Validaciones
+            if (!nombre || !apellidos) {
+                alert("Los campos de nombre y apellidos no pueden estar vacíos.");
+                return;
+            }
+    
+            if (!fechaNac || new Date(fechaNac) > new Date()) {
+                alert("La fecha de nacimiento no puede superar la fecha actual.");
+                return;
+            }
+    
+            if (!emailRegex.test(correo)) {
+                alert("El correo electrónico no es válido.");
+                return;
+            }
+    
+            if (!password || password !== passwordRepetir) {
+                alert("Las contraseñas no coinciden o están vacías.");
+                return;
+            }
+    
+            const intereses = [
+                form['idCkProgramacion'].checked,
+                form['idCkBD'].checked,
+                form['idCkRedes'].checked,
+                form['idCkSeguridad'].checked
+            ];
+            if (!intereses.includes(true)) {
+                alert("Debe seleccionar al menos un interés.");
+                return;
+            }
+    
+            if (!carrera) {
+                alert("Debe seleccionar una carrera.");
+                return;
+            }
+    
+            if (pais === "Seleccione una opcion") {
+                alert("Debe seleccionar un país de origen.");
+                return;
+            }
+    
+            // Crear tabla de resultados
+            crearTabla(nombre, apellidos, fechaNac, correo, intereses, carrera.value, pais);
+            mostrarModal();
+        });
+    
+        // Función para crear tabla de resultados
+        function crearTabla(nombre, apellidos, fechaNac, correo, intereses, carrera, pais) {
+            // Limpiar el contenido anterior del modal
+            modalBody.innerHTML = '';
+    
+            // Crear tabla
+            const tabla = document.createElement('table');
+            tabla.className = 'table table-bordered';
+    
+            // Función para crear fila
+            function crearFila(titulo, valor) {
+                const fila = document.createElement('tr');
+                const celdaTitulo = document.createElement('td');
+                celdaTitulo.appendChild(document.createTextNode(titulo));
+                const celdaValor = document.createElement('td');
+                celdaValor.appendChild(document.createTextNode(valor));
+                fila.appendChild(celdaTitulo);
+                fila.appendChild(celdaValor);
+                tabla.appendChild(fila);
+            }
+    
+            // Agregar filas a la tabla
+            crearFila('Nombres', nombre);
+            crearFila('Apellidos', apellidos);
+            crearFila('Fecha de Nacimiento', fechaNac);
+            crearFila('Correo Electrónico', correo);
+            crearFila('Intereses', obtenerIntereses(intereses).join(", "));
+            crearFila('Carrera', carrera);
+            crearFila('País de Origen', pais);
+    
+            // Agregar la tabla al modal
+            modalBody.appendChild(tabla);
+        }
+    
+        // Función para obtener intereses seleccionados
+        function obtenerIntereses(intereses) {
+            const etiquetasIntereses = ['Programación', 'Base de Datos', 'Inteligencia Artificial', 'Seguridad Informática'];
+            return intereses.map((interes, index) => interes ? etiquetasIntereses[index] : null).filter(Boolean);
+        }
+    
+        // Función para mostrar el modal
+        function mostrarModal() {
+            const modal = new bootstrap.Modal(document.getElementById('idModal'), {});
+            modal.show();
+        }
+    </script>
+    
+
 </body>
 
 </html>
