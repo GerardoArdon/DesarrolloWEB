@@ -11,21 +11,22 @@ const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
 // PARA IMPRIMIR EL RESULTADO
 const bodyModal = document.getElementById("idBodyModal");
 
+
 //función para validar el formulario
 function validarFormulario(){
     let errores=[];
     
     //validacion de campos vacíos
-    if (!formulario["idNombre"].value.trim()) errores.push("El campo Nombres está vacío.");
-    if (!formulario["idApellidos"].value.trim()) errores.push("El campo Apellidos está vacío.");
-    if (!formulario["idCorreo"].value.trim()) errores.push("El campo Correo está vacío.");
+    if (!formulario["idNombre"].value.trim()) errores.push("El campo Nombres está vacio.");
+    if (!formulario["idApellidos"].value.trim()) errores.push("El campo Apellidos está vacio.");
+    if (!formulario["idCorreo"].value.trim()) errores.push("El campo Correo está vacio.");
     if (!formulario["idPassword"].value.trim()|!formulario["idPasswordRepetir"].value.trim())
         errores.push("El campo Contraseña está vacío.");
 
     //validacion de la fecha de nacimiento
     const fechaNac = new Date(formulario["idFechaNac"].value);
     const fechaActual = new Date();
-    if (fechaNac >= fechaActual) errores.push("La fecha de nacimiento no puede ser posterior a hoy.");
+    if (fechaNac>=fechaActual) errores.push("La fecha de nacimiento no puede ser posterior a hoy.");
 
     //Validacion de correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,8 +51,9 @@ function validarFormulario(){
     if (formulario["idCmPais"].value === "Seleccione una opcion") 
         errores.push("Seleccione un país de origen.");
 
+        
     //Mostrar errores
-    if (errores.length > 0) {
+    if (errores.length > 0){
         alert(errores.join("\n"));
         return false;
     }
