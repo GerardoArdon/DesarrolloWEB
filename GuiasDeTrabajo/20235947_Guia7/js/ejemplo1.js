@@ -174,43 +174,45 @@ buttonCrear.onclick = () => {
 
 
 //A ---------- Complementario
-buttonAddElemento.onclick = () => {
-    if (nombreElemento.value !== "" && tituloElemento.value !== "") {
+buttonAddElemento.onclick =()=>{
+    if (nombreElemento.value !== ""&& tituloElemento.value !== ""){
         const idUnico = verificarIdUnico(nombreElemento.value);
 
-        if (idUnico) {
+        if (idUnico){
             let elemento = cmbElemento.value;
-            if (elemento === "select") {
+            if (elemento === "select"){
                 newSelect();
             } else if (elemento === "radio" || elemento === "checkbox") {
                 newRadioCheckbox(elemento);
             } else {
                 newInput(elemento);
             }
-        } else {
+
+        }else{
             alert("Ya existe un control con este ID. Por favor, use un ID único.");
         }
-    } else {
+
+    }else{
         alert("Faltan campos por completar");
     }
 };
 
 
 //funcion para validar el formulario
-const validarFormulario = () => {
+const validarFormulario = ()=>{
     const elementos = newForm.elements;
-    let formularioValido = true;
-    let mensajeError = "Por favor complete o seleccione los siguientes campos:\n";
+    let formularioValido =true;
+    let mensajeError="Por favor complete o seleccione los siguientes campos:\n";
 
-    for (let elemento of elementos) {
+
+    for (let elemento of elementos){
         const tipo = elemento.type;
 
-        if ((tipo === "text" || tipo === "number" || tipo === "date" || tipo === "password" || tipo === "email" || tipo === "textarea") && elemento.value === "") {
+        if ((tipo === "text"|tipo==="number"|tipo=== "date"|tipo === "password"|tipo === "email"|tipo==="textarea") && elemento.value===""){
             formularioValido = false;
             mensajeError += `- ${elemento.placeholder || "Campo sin nombre"}\n`;
         }
-
-        if (tipo === "radio" || tipo === "checkbox") {
+        if (tipo === "radio" || tipo === "checkbox"){
             const name = elemento.name;
             const checkedElement = document.querySelector(`input[name="${name}"]:checked`);
             if (!checkedElement) {
@@ -218,14 +220,14 @@ const validarFormulario = () => {
                 mensajeError += `- Seleccione una opción para ${name}\n`;
             }
         }
-
-        if (tipo === "select-one" && elemento.value === "") {
+        if (tipo === "select-one" && elemento.value === ""){
             formularioValido = false;
             mensajeError += `- Seleccione una opción para ${elemento.id}\n`;
         }
     }
 
-    if (formularioValido) {
+
+    if (formularioValido){
         alert("Formulario completado correctamente");
     } else {
         alert(mensajeError);
