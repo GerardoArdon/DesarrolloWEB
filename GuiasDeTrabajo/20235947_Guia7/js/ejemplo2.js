@@ -11,7 +11,7 @@ const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
 // PARA IMPRIMIR EL RESULTADO
 const bodyModal = document.getElementById("idBodyModal");
 
-// Función para validar el formulario
+//función para validar el formulario
 function validarFormulario(){
     let errores=[];
     
@@ -56,7 +56,3 @@ function validarFormulario(){
         return false;
     }
 }
-
-
-
-
